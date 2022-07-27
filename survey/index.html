@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>대명아임레디</title>
+	<meta property="og:image" content="https://www.daemyungimready.com/common/images/logo.gif">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" href="assets/css/owl.carousel.css"> -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.css">
+	<link rel="stylesheet" href="assets/css/animate.min.css">
+	<link rel="stylesheet" href="assets/css/fontawesome-all.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+
+	<!-- Color switcher Alternatives | you can remove this section -->
+	<link rel="stylesheet" type="text/css" href="assets/css/colors/switch.css">
+	<link href="assets/css/colors/color-2.css" rel="alternate stylesheet" type="text/css" title="color-2">
+	<link href="assets/css/colors/color-3.css" rel="alternate stylesheet" type="text/css" title="color-3">
+	<link href="assets/css/colors/color-4.css" rel="alternate stylesheet" type="text/css" title="color-4">
+	<link href="assets/css/colors/color-5.css" rel="alternate stylesheet" type="text/css" title="color-5">
+
+	<body>
+		<!-- This code is use for color chooser, you can delete -->
+		<!-- <div id="switch-color" class="color-switcher">
+			<div class="open"><i class="fas fa-cog"></i></div>
+			<h4>COLOR OPTION</h4>
+			<ul>
+				<li><a class="color-2" onclick="setActiveStyleSheet('color-2'); return false;" href="#"><i class="fas fa-cog"></i></a> </li>
+				<li><a class="color-3" onclick="setActiveStyleSheet('color-3'); return false;" href="#"><i class="fas fa-cog"></i></a> </li>
+				<li><a class="color-4" onclick="setActiveStyleSheet('color-4'); return false;" href="#"><i class="fas fa-cog"></i></a> </li>
+				<li><a class="color-5" onclick="setActiveStyleSheet('color-5'); return false;" href="#"><i class="fas fa-cog"></i></a> </li>
+			</ul>
+		</div> -->
+		<div class="clearfix"></div>
+
+		<div class="wrapper">
+			<div class="wizard-content-1 pos-flex clearfix">
+				<div class="steps d-inline-block clearfix">
+					<span class="bg-shape"></span>
+					<ul class="tablist multisteps-form__progress">
+						<li class="multisteps-form__progress-btn js-active current">
+							<div class="step-btn-icon-text">
+								<span>1</span>
+								<div class="step-btn-icon float-left position-relative">
+									<img class="fix-image-1" src="assets/img/bt1.png" alt="">
+								</div>
+								<div class="step-btn-text">
+									<h2 class="text-uppercase">전액지원</h2>
+									<span class="text-capitalize">받고 싶은 제품이 무엇인가요?</span>
+								</div>
+							</div>
+						</li>
+						<li class="multisteps-form__progress-btn">
+							<div class="step-btn-icon-text">
+								<span>2</span>
+								<div class="step-btn-icon float-left position-relative">
+									<img class="fix-image-2" src="assets/img/bt2.png" alt="">
+								</div>
+								<div class="step-btn-text">
+									<h2 class="text-uppercase">추가혜택</h2>
+									<span class="text-capitalize">가전은 기본! 추가혜택은?</span>
+								</div>
+							</div>
+						</li>
+						<li class="multisteps-form__progress-btn">
+							<div class="step-btn-icon-text">
+								<span>3</span>
+								<div class="step-btn-icon float-left position-relative">
+									<img class="fix-image-3" src="assets/img/bt3.png" alt="">
+								</div>
+								<div class="step-btn-text">
+									<h2 class="text-uppercase">관심고객등록</h2>
+									<span class="text-capitalize">혜택을 받아보고싶은 이유는?</span>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="step-inner-content clearfix position-relative">
+					<span class="bg-shape"></span>
+					<form class="multisteps-form__form" action="action.php" id="wizard" method="POST" enctype="multipart/form-data">
+						<div class="form-area position-relative">
+							<div class="multisteps-form__panel js-active" data-animation="scaleIn">
+								<div class="wizard-forms position-relative">
+									<span class="step-no position-absolute">Step 1</span>
+									<div class="wizard-progress">
+										<span>1 of 3 Completed</span>
+										<div class="progress">
+											<div class="progress-bar" style="width: 33%;">
+											</div>
+										</div>
+									</div>
+									<div class="wizard-inner-box">
+										<div class="inner-title text-center">
+											<h4>전액지원 받고 싶은 제품이 무엇인가요?</h4>
+											<p>노트북, UHD-TV, 세탁기/건조기, 냉장고/에어컨, 청소기, 안마의자, 소파, 침대 중 택1</p>
+										</div>
+										<div id="need-job-slide-id" class="need-job-slide owl-carousel">
+											<label class="need-job-icon-text text-center">
+												<input type="radio" name="job_title" value="Ux designer label" class="j-checkbox" checked>
+												<span class="need-job-text-inner">
+													<span class="checkbox-circle-mark position-absolute"> </span>
+													<span class="need-job-icon">
+														<img src="assets/img/bt1.png" alt="">
+													</span>
+													<span class="need-job-text">
+														<span class="text-uppercase need-job-title">노트북</span>
+														<span class="text-capitalize need-job-text">Notebook</span>
+													</span>
+												</span>
+											</label>
+											<label class="need-job-icon-text text-center">
+												<input type="radio" name="job_title" value="Front Developer" class="j-checkbox">
+												<span class="need-job-text-inner">
+													<span class="checkbox-circle-mark position-absolute"> </span>
+													<span class="need-job-icon">
+														<img src="assets/img/bt2.png" alt="">
+													</span>
+													<span class="need-job-text">
+														<span class="text-uppercase need-job-title">UHD-TV</span>
+														<span class="text-capitalize need-job-text">UHD-TV</span>
+													</span>
+												</span>
+											</label>
+											<label class="need-job-icon-text text-center">
+												<input type="radio" name="job_title" value="Php Developer" class="j-checkbox">
+												<span class="need-job-text-inner">
+													<span class="checkbox-circle-mark position-absolute"> </span>
+													<span class="need-job-icon">
+														<img src="assets/img/bt3.png" alt="">
+													</span>
+													<span class="need-job-text">
+														<span class="text-uppercase need-job-title">세탁기/건조기</span>
+
+														<span class="text-capitalize need-job-text">Washer/Dryer</span>
+													</span>
+												</span>
+											</label>
+
+											<label class="need-job-icon-text text-center">
+												<input type="radio" name="job_title" value="Php Developer" class="j-checkbox">
+												<span class="need-job-text-inner">
+													<span class="checkbox-circle-mark position-absolute"> </span>
+													<span class="need-job-icon">
+														<img src="assets/img/bt4.png" alt="">
+													</span>
+													<span class="need-job-text">
+														<span class="text-uppercase need-job-title">냉장고/에어컨</span>
+
+														<span class="text-capitalize need-job-text">refrigerator</span>
+													</span>
+												</span>
+											</label>
+
+											<label class="need-job-icon-text text-center">
+												<input type="radio" name="job_title" value="Ux designer" class="j-checkbox">
+												<span class="need-job-text-inner">
+													<span class="checkbox-circle-mark position-absolute"> </span>
+													<span class="need-job-icon">
+														<img src="assets/img/nd1.png" alt="">
+													</span>
+													<span class="need-job-text">
+														<span class="text-uppercase need-job-title">청소기/공기청정기</span>
+														<span class="text-capitalize need-job-text">vacuum cleaner</span>
+													</span>
+												</span>
+											</label>
+											<label class="need-job-icon-text text-center">
+												<input type="radio" name="job_title" value="Ux designer" class="j-checkbox">
+												<span class="need-job-text-inner">
+													<span class="checkbox-circle-mark position-absolute"> </span>
+													<span class="need-job-icon">
+														<img src="assets/img/nd2.png" alt="">
+													</span>
+													<span class="need-job-text">
+														<span class="text-uppercase need-job-title">안마의자</span>
+														<span class="text-capitalize need-job-text">massage chair</span>
+													</span>
+												</span>
+											</label>
+											<label class="need-job-icon-text text-center">
+												<input type="radio" name="job_title" value="Ux designer" class="j-checkbox">
+												<span class="need-job-text-inner">
+													<span class="checkbox-circle-mark position-absolute"> </span>
+													<span class="need-job-icon">
+														<img src="assets/img/nd3.png" alt="">
+													</span>
+													<span class="need-job-text">
+														<span class="text-uppercase need-job-title">소파</span>
+														<span class="text-capitalize need-job-text">Sofa</span>
+													</span>
+												</span>
+											</label>
+											<label class="need-job-icon-text text-center">
+												<input type="radio" name="job_title" value="Ux designer" class="j-checkbox">
+												<span class="need-job-text-inner">
+													<span class="checkbox-circle-mark position-absolute"> </span>
+													<span class="need-job-icon">
+														<img src="assets/img/nd4.png" alt="">
+													</span>
+													<span class="need-job-text">
+														<span class="text-uppercase need-job-title">침대</span>
+														<span class="text-capitalize need-job-text">bed</span>
+													</span>
+												</span>
+											</label>
+										</div>
+									</div>
+									<div class="actions">
+										<ul>
+											<li><span class="js-btn-next" title="NEXT">전액지원 받기</span></li>
+										</ul>
+									</div>
+								</div>
+								<div class="bottom-vector position-absolute">
+									<img src="assets/img/sd1.png" alt="">
+								</div>
+							</div>
+							<!-- step 1 -->
+							<div class="multisteps-form__panel" data-animation="scaleIn">
+								<div class="wizard-forms form-step-2">
+									<span class="step-no position-absolute">Step 2</span>
+									<div class="wizard-progress">
+										<span>3분2단계 완성</span>
+										<div class="progress">
+											<div class="progress-bar" style="width: 66%;">
+											</div>
+										</div>
+									</div>
+									<div class="wizard-inner-box">
+										<div class="inner-title text-center">
+											<h2>가전은 기본! 추가혜택은?</h2>
+											<p>첫번째 혜택, 두번째 혜택 중 택1</p>
+										</div>
+									</div>
+									<div class="details-form-area wizard-inner-box">
+										<div class="row need-job-slide owl-carousel benefit">
+											<label class="need-job-icon-text text-center benefit-item">
+												<h4><span>첫번째</span> 혜택</h4>
+												<input type="radio" name="job_title" value="Ux designer" class="j-checkbox">
+												<span class="need-job-text-inner">
+													<span class="checkbox-circle-mark position-absolute"> </span>
+													<span class="need-job-icon">
+														<img src="assets/img/benefit1.png" alt="">
+													</span>
+												</span>
+											</label>
+											<label class="need-job-icon-text text-center benefit-item">
+												<h4><span>두번째</span> 혜택</h4>
+												<input type="radio" name="job_title" value="Ux designer" class="j-checkbox">
+												<span class="need-job-text-inner">
+													<span class="checkbox-circle-mark position-absolute"> </span>
+													<span class="need-job-icon">
+														<img src="assets/img/benefit2.png" alt="">
+													</span>
+												</span>
+											</label>
+										</div>
+									</div>
+									<div class="actions">
+										<ul>
+											<li><span class="js-btn-prev" title="BACK"> 이전</span></li>
+											<li><button type="submit" name="submit"><span class="js-btn-next" title="NEXT">선택 </span></button></li>
+										</ul>
+									</div>
+									<div class="bottom-vector position-absolute">
+										<img src="assets/img/sd1.png" alt="">
+									</div>
+								</div>
+							</div>
+							<!-- step 2 -->
+							<div class="multisteps-form__panel" data-animation="scaleIn">
+								<div class="wizard-forms form-step-3">
+									<span class="step-no position-absolute">Step 3</span>
+									<div class="wizard-progress">
+										<span>3 of 3 Completed</span>
+										<div class="progress">
+											<div class="progress-bar" style="width: 100%;">
+											</div>
+										</div>
+									</div>
+									<div class="wizard-inner-box">
+										<div class="thank-content text-center">
+											<div class="thank-img">
+												<img src="assets/img/th1.png" alt="">
+											</div>
+											<div class="thank-text">
+												<h2>Thankyou For submition</h2>
+												<p><span>Mike Loen</span> We will Email you soon</p>
+											</div>
+											<div class="thank-subscribe position-relative">
+												<input class="email" name="subs_email" type="email" placeholder="Subcribe For daily update Jobs">
+												<button type="submit" name="email_submit" value="Submit"> <i class="fas fa-envelope"></i></button>
+											</div>
+											<div class="thank-btn text-uppercase">
+												<a href="index.html">Back to home</a>
+											</div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+							<!-- step 3 -->
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<script src="assets/js/jquery-3.3.1.min.js"></script>
+		<script src="assets/js/bootstrap.min.js"></script>
+		<script src="assets/js/popper.min.js"></script>
+		<!-- <script src="assets/js/owl.carousel.min.js"></script> -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+		<script src="assets/js/form-step.js"></script>
+		<script src="assets/js/jquery.validate.min.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script src="assets/js/switch.js"></script>
+		<script>
+			$("#customFile").change(function() {
+				filename = this.files[0].name
+			});
+			$(".custom-file-input").on("change", function() {
+				var fileName = $(this).val().split("\\").pop();
+				$(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+			});
+			$('.datepicker').datepicker({
+				clearBtn: true,
+				format: "dd/mm/yyyy"
+			});
+		</script>
+	</body>
+
+	</html>
