@@ -19,7 +19,7 @@ Last change:    00/00/00
 			init: function() {
 
 				this.preloader();
-				this.NeedJobSlide();
+				// this.NeedJobSlide();
 				this.FileUpload();
 				
 			},
@@ -28,40 +28,40 @@ Last change:    00/00/00
 					jQuery('#preloader').fadeOut('slow',function(){jQuery(this).remove();});
 				});
 			},
-			NeedJobSlide: function (){
-				$('#need-job-slide-id').owlCarousel({
-					margin:30,
-					responsiveClass:true,
-					nav: true,
-					dots: false,
-					infinite: true,
-					autoHeight: true,
-					autoplay: false,
-					navText:["<i class='fas fa-arrow-left'></i>","<i class='fas fa-arrow-right'></i>"],
-					smartSpeed: 1000,
-					responsive:{
-						0:{
-							items:1,
-						},
-						500:{
-							items:1,
-						},
-						600:{
-							items:1,
-						},
-						700:{
-							items:1,
-						},
-						900:{
-							items:3,
-						},
-						1000:{
-							items:3,
+			// NeedJobSlide: function (){
+			// 	$('#need-job-slide-id').owlCarousel({
+			// 		margin:30,
+			// 		responsiveClass:true,
+			// 		nav: true,
+			// 		dots: false,
+			// 		infinite: true,
+			// 		autoHeight: true,
+			// 		autoplay: false,
+			// 		navText:["<i class='fas fa-arrow-left'></i>","<i class='fas fa-arrow-right'></i>"],
+			// 		smartSpeed: 1000,
+			// 		responsive:{
+			// 			0:{
+			// 				items:1,
+			// 			},
+			// 			500:{
+			// 				items:1,
+			// 			},
+			// 			600:{
+			// 				items:1,
+			// 			},
+			// 			700:{
+			// 				items:1,
+			// 			},
+			// 			900:{
+			// 				items:3,
+			// 			},
+			// 			1000:{
+			// 				items:3,
 
-						},
-					},
-				})
-			},
+			// 			},
+			// 		},
+			// 	})
+			// },
 			FileUpload: function (){
 				$("#customFile").change(function() {
 					filename = this.files[0].name

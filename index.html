@@ -19,22 +19,33 @@
 	<link href="assets/css/colors/color-4.css" rel="alternate stylesheet" type="text/css" title="color-4">
 	<link href="assets/css/colors/color-5.css" rel="alternate stylesheet" type="text/css" title="color-5">
 <script>
-function chkform(){
-	f=document.writeform;
-	if(f.first_name.value==""){
-		alert("성함을 입력하세요.");
-		return;
+	document.addEventListener("DOMContentLoaded", function() {
+		$('#chkform').click(chkform);
+	})
+
+	function chkform(){
+		let benefitDetailChk = $("input[name='add_info']").is(":checked");
+
+		if(benefitDetailChk === false) {
+			alert('한가지를 선택해주세요.');
+			return;
+		}
+
+		f=document.writeform;
+		if(f.first_name.value==""){
+			alert("성함을 입력하세요.");
+			return;
+		}
+		if(f.phone.value==""){
+			alert("연락처를 입력하세요.");
+			return;
+		}
+		if(!f.agree.checked){
+			alert("개인정보제공 동의 하셔야 합니다.");
+			return;
+		}
+		f.submit();
 	}
-	if(f.phone.value==""){
-		alert("연락처를 입력하세요.");
-		return;
-	}
-	if(!f.agree.checked){
-		alert("개인정보제공 동의 하셔야 합니다.");
-		return;
-	}
-	f.submit();
-}
 </script>
 	<body>
 		<div class="wrapper">
@@ -101,7 +112,7 @@ function chkform(){
 										</div>
 										<div class="need-job-slide owl-carousel">
 											<label class="need-job-icon-text text-center">
-												<input type="radio" name="product[0]" value="노트북" class="j-checkbox" checked>
+												<input type="radio" name="product" value="노트북" class="j-checkbox" checked>
 												<span class="need-job-text-inner">
 													<span class="checkbox-circle-mark position-absolute"> </span>
 													<span class="need-job-icon">
@@ -114,7 +125,7 @@ function chkform(){
 												</span>
 											</label>
 											<label class="need-job-icon-text text-center">
-												<input type="radio" name="product[0]" value="UHD-TV" class="j-checkbox">
+												<input type="radio" name="product" value="UHD-TV" class="j-checkbox">
 												<span class="need-job-text-inner">
 													<span class="checkbox-circle-mark position-absolute"> </span>
 													<span class="need-job-icon">
@@ -127,7 +138,7 @@ function chkform(){
 												</span>
 											</label>
 											<label class="need-job-icon-text text-center">
-												<input type="radio" name="product[0]" value="세탁기/건조기" class="j-checkbox">
+												<input type="radio" name="product" value="세탁기/건조기" class="j-checkbox">
 												<span class="need-job-text-inner">
 													<span class="checkbox-circle-mark position-absolute"> </span>
 													<span class="need-job-icon">
@@ -142,7 +153,7 @@ function chkform(){
 											</label>
 
 											<label class="need-job-icon-text text-center">
-												<input type="radio" name="product[0]" value="냉장고/에어컨" class="j-checkbox">
+												<input type="radio" name="product" value="냉장고/에어컨" class="j-checkbox">
 												<span class="need-job-text-inner">
 													<span class="checkbox-circle-mark position-absolute"> </span>
 													<span class="need-job-icon">
@@ -157,7 +168,7 @@ function chkform(){
 											</label>
 
 											<label class="need-job-icon-text text-center">
-												<input type="radio" name="product[0]" value="청소기/공기청정기" class="j-checkbox">
+												<input type="radio" name="product" value="청소기/공기청정기" class="j-checkbox">
 												<span class="need-job-text-inner">
 													<span class="checkbox-circle-mark position-absolute"> </span>
 													<span class="need-job-icon">
@@ -170,7 +181,7 @@ function chkform(){
 												</span>
 											</label>
 											<label class="need-job-icon-text text-center">
-												<input type="radio" name="product[0]" value="안마의자" class="j-checkbox">
+												<input type="radio" name="product" value="안마의자" class="j-checkbox">
 												<span class="need-job-text-inner">
 													<span class="checkbox-circle-mark position-absolute"> </span>
 													<span class="need-job-icon">
@@ -183,7 +194,7 @@ function chkform(){
 												</span>
 											</label>
 											<label class="need-job-icon-text text-center">
-												<input type="radio" name="product[0]" value="소파" class="j-checkbox">
+												<input type="radio" name="product" value="소파" class="j-checkbox">
 												<span class="need-job-text-inner">
 													<span class="checkbox-circle-mark position-absolute"> </span>
 													<span class="need-job-icon">
@@ -196,7 +207,7 @@ function chkform(){
 												</span>
 											</label>
 											<label class="need-job-icon-text text-center">
-												<input type="radio" name="product[0]" value="침대" class="j-checkbox">
+												<input type="radio" name="product" value="침대" class="j-checkbox">
 												<span class="need-job-text-inner">
 													<span class="checkbox-circle-mark position-absolute"> </span>
 													<span class="need-job-icon">
@@ -233,7 +244,7 @@ function chkform(){
 										<div class="row need-job-slide owl-carousel benefit">
 											<label class="need-job-icon-text text-center benefit-item">
 												<h5><span>첫번째</span> 혜택</h5>
-												<input type="radio" name="product[1]" value="첫번째 혜택" class="j-checkbox">
+												<input type="radio" name="benefit" value="첫번째 혜택" class="j-checkbox" checked>
 												<span class="need-job-text-inner">
 													<span class="checkbox-circle-mark position-absolute"> </span>
 													<span class="need-job-icon">
@@ -244,7 +255,7 @@ function chkform(){
 											</label>
 											<label class="need-job-icon-text text-center benefit-item">
 												<h5><span>두번째</span> 혜택</h5>
-												<input type="radio" name="product[1]" value="두번째 혜택" class="j-checkbox">
+												<input type="radio" name="benefit" value="두번째 혜택" class="j-checkbox">
 												<span class="need-job-text-inner">
 													<span class="checkbox-circle-mark position-absolute"> </span>
 													<span class="need-job-icon benefit-img">
@@ -264,7 +275,6 @@ function chkform(){
 									<div class="actions">
 										<ul>
 											<li><span class="js-btn-prev" title="BACK">이전</span></li>
-											<!-- <li><button type="submit" name="submit"><span class="js-btn-next" title="NEXT">선택</span></button></li> -->
 											<li><span class="js-btn-next" title="NEXT">선택</span></li>
 										</ul>
 									</div>
@@ -323,7 +333,7 @@ function chkform(){
 											<div class="actions">
 												<ul>
 													<li><span class="js-btn-prev" title="BACK">이전</span></li>
-													<li><span class="js-btn-next2" title="NEXT" onclick="chkform()">등록</span></li>
+													<li><span class="js-btn-next2" title="NEXT" id="chkform">등록</span></li>
 												</ul>
 											</div>
 										</div>
