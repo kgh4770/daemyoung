@@ -90,6 +90,6 @@ $message .= '</body></html>';
 			echo '이메일을 보낼 수 없습니다. 다시 시도해주세요.';
 		}
 		// echo 'Data inserted';
-		header('location:view.php');
+		header('location:complete.php');
 	}
 	

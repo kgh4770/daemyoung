@@ -40,8 +40,21 @@
 			alert("연락처를 입력하세요.");
 			return;
 		}
+		
+		let phoneNum = document.getElementById('phoneNo').value;
+		let regPhone = /^01([0|1|6|7|8|9])-?([0-9]{3,4})-?([0-9]{4})$/;
+
+		if(!regPhone.test(phoneNum) === true) {
+			alert('올바른 연락처를 입력하세요.');
+			return;
+		}
+
 		if(!f.agree.checked){
 			alert("개인정보제공 동의 하셔야 합니다.");
+			return;
+		}
+		if(!f.agree2.checked){
+			alert("개인정보 처리위탁 동의 하셔야 합니다.");
 			return;
 		}
 		f.submit();
@@ -68,8 +81,8 @@
 									<img class="fix-image-1" src="assets/img/bt1.png" alt="">
 								</div>
 								<div class="step-btn-text">
-									<h2 class="text-uppercase">전액지원</h2>
-									<span class="text-capitalize">받고싶은 제품이 무엇인가요?</span>
+									<h2 class="text-uppercase">지금 필요한</h2>
+									<span class="text-capitalize">가전이 무엇인가요?</span>
 								</div>
 							</div>
 						</li>
@@ -107,8 +120,8 @@
 								<div class="wizard-forms position-relative">
 									<div class="wizard-inner-box">
 										<div class="inner-title text-center">
-											<h2>전액지원 받고 싶은<br> 제품이 무엇인가요?</h2>
-											<p>노트북, UHD-TV, 세탁기/건조기, 냉장고/에어컨, 청소기, 안마의자, 소파, 침대 중 택1</p>
+											<h2>지금 필요한<br> 가전이 무엇인가요?</h2>
+											<p>노트북, TV, 세탁기/건조기, 냉장고/에어컨, 청소기, 안마의자, 소파, 침대 등</p>
 										</div>
 										<div class="need-job-slide owl-carousel">
 											<label class="need-job-icon-text text-center">
@@ -132,8 +145,8 @@
 														<img src="assets/img/bt2.png" alt="">
 													</span>
 													<span class="need-job-text">
-														<span class="text-uppercase need-job-title">UHD-TV</span>
-														<span class="text-capitalize need-job-text">UHD-TV</span>
+														<span class="text-uppercase need-job-title">TV</span>
+														<span class="text-capitalize need-job-text">TV</span>
 													</span>
 												</span>
 											</label>
@@ -237,27 +250,25 @@
 									<div class="wizard-inner-box">
 										<div class="inner-title text-center">
 											<h2>가전은 기본! 추가혜택은?</h2>
-											<p>첫번째 혜택, 두번째 혜택 중 택1</p>
+											<p>추가혜택</p>
 										</div>
 									</div>
 									<div class="details-form-area wizard-inner-box">
 										<div class="row need-job-slide owl-carousel benefit">
 											<label class="need-job-icon-text text-center benefit-item">
-												<h5><span>첫번째</span> 혜택</h5>
-												<input type="radio" name="benefit" value="첫번째 혜택" class="j-checkbox" checked>
+												<h5><span>멤버십</span> 혜택</h5>
+												<input type="radio" name="" value="첫번째 혜택" class="j-checkbox" checked>
 												<span class="need-job-text-inner">
-													<span class="checkbox-circle-mark position-absolute"> </span>
 													<span class="need-job-icon">
 														<img src="assets/img/benefit1.png" alt="">
-														<span class="benefit-txt-1">대명리조트, 오션월드, 스키월드 연10회 할인</span>
+														<span class="benefit-txt-1">소노호텔앤리조트, 오션월드, 스키월드 연10회 할인</span>
 													</span>
 												</span>
 											</label>
 											<label class="need-job-icon-text text-center benefit-item">
-												<h5><span>두번째</span> 혜택</h5>
-												<input type="radio" name="benefit" value="두번째 혜택" class="j-checkbox">
+												<h5><span>서비스</span> 혜택</h5>
+												<input type="radio" name="" value="두번째 혜택" class="j-checkbox" checked>
 												<span class="need-job-text-inner">
-													<span class="checkbox-circle-mark position-absolute"> </span>
 													<span class="need-job-icon benefit-img">
 														<img src="assets/img/benefit2.png" alt="">
 													</span>
@@ -323,10 +334,75 @@
 														</span>
 														<span>
 															<span>연락처</span>
-															<input type="number" name="phone">
+															<input type="number" name="phone" id="phoneNo">
 														</span>
-														<label><input type="checkbox" name="agree">개인정보제공 동의</label>
-														<label>고객센터 1644-8823</label>
+
+														<div class="agree-wrap">
+															<label>
+																<input type="checkbox" name="agree">개인정보제공 동의
+															</label>
+															
+															<table>
+																<tr>
+																	<td width="25px">No.</td>
+																	<td width="60px">수집항목</td>
+																	<td width="55px">수집방법</td>
+																	<td>표준 문구</td>
+																</tr>
+																<tr>
+																	<td>1</td>
+																	<td>이름</td>
+																	<td>신청자<br>기입</td>
+																	<td rowspan="3" style="text-align:left; padding:5px;">
+																		개인정보 수집 및 이용 동의 (필수)<br>
+																		<br>
+																		1. 수집/이용 개인정보 항목 : 성명, 연락처(휴대전화번호)<br>
+																		2. 수집/이용 목적 : 고객상담 업무 및 회원등록, 모집, 유지, 관리<br>
+																		3. 보유기간 : 소비자 불만 또는 분쟁처리에 관한 기록 보존을 위해 3년간 보유<br><br>
+																		
+																		* 개인정보 수집 이용에 동의하지 않을 수 있으나, 미동의시 상품상담이 불가합니다.
+																	</td>
+																</tr>
+																<tr>
+																	<td>2</td>
+																	<td>연락처</td>
+																	<td>신청자<br>기입</td>
+																</tr>
+																<tr>
+																	<td>3</td>
+																	<td>개인정보<br>수집 및<br>이용동의</td>
+																	<td>동의 획득</td>
+																</tr>
+															</table>
+
+															<label>
+																<input type="checkbox" name="agree2">개인정보 처리위탁 동의
+															</label>
+															
+															<table>
+																<tr>
+																	<td width="25px">No.</td>
+																	<td width="60px">수집항목</td>
+																	<td width="55px">수집방법</td>
+																	<td>표준 문구</td>
+																</tr>
+																<tr>
+																	<td>1</td>
+																	<td>이름</td>
+																	<td>신청자<br>기입</td>
+																	<td style="text-align:left; padding:5px;">
+																		개인정보 처리위탁 동의 (필수)<br>
+																		<br>
+																		- 개인정보 수탁자 : <br>
+																		에이앤젯드림<br><br>
+																		<!-- 에이앤젯드림, OOOO (에이앤젯드림의 재위탁)<br><br> -->
+																		
+																		- 개인정보 처리위탁 목적 : 고객상담 업무 및 회원등록, 모집, 유지, 관리<br><br>
+																		* 개인정보 처리위탁에 동의하지 않을 수 있으나, 미동의시 상품상담이 불가합니다.
+																	</td>
+																</tr>
+															</table>
+														</div>
 													</span>
 												</label>
 											</div>

@@ -1449,12 +1449,27 @@ h6 {
   border-bottom: 2px solid #e9e9e9;
   width: 75%;
 }
-.information label {
-  margin-top: 30px;
-}
 .information label input[type="checkbox"] {
   margin-right: 10px;
 }
 #stepText {
   display: inline-block;
+}
+.agree-wrap {
+  width: 100%;
+  margin-top: 30px;
+}
+.agree-wrap label {
+  display: block;
+  text-align: left;
+  margin: 30px auto 10px;
+}
+.agree-wrap table {
+  border: 2px solid #e9e9e9;
+  width: 100%;
+  font-size: smaller;
+}
+.agree-wrap table tr,
+.agree-wrap table td {
+  border: 1px solid #e9e9e9;
 }
