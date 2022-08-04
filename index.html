@@ -21,6 +21,9 @@
 <script>
 	document.addEventListener("DOMContentLoaded", function() {
 		$('#chkform').click(chkform);
+		$('.explan').click(function() {
+			$(this).parent().find('table').fadeToggle();
+		});
 	})
 
 	function chkform(){
@@ -58,6 +61,10 @@
 			return;
 		}
 		f.submit();
+	}
+
+	function agreeExplan() {
+		$(this).parent().find('table').fadeToggle();
 	}
 </script>
 	<body>
@@ -338,70 +345,76 @@
 														</span>
 
 														<div class="agree-wrap">
-															<label>
-																<input type="checkbox" name="agree">개인정보제공 동의
-															</label>
-															
-															<table>
-																<tr>
-																	<td width="25px">No.</td>
-																	<td width="60px">수집항목</td>
-																	<td width="55px">수집방법</td>
-																	<td>표준 문구</td>
-																</tr>
-																<tr>
-																	<td>1</td>
-																	<td>이름</td>
-																	<td>신청자<br>기입</td>
-																	<td rowspan="3" style="text-align:left; padding:5px;">
-																		개인정보 수집 및 이용 동의 (필수)<br>
-																		<br>
-																		1. 수집/이용 개인정보 항목 : 성명, 연락처(휴대전화번호)<br>
-																		2. 수집/이용 목적 : 고객상담 업무 및 회원등록, 모집, 유지, 관리<br>
-																		3. 보유기간 : 소비자 불만 또는 분쟁처리에 관한 기록 보존을 위해 3년간 보유<br><br>
-																		
-																		* 개인정보 수집 이용에 동의하지 않을 수 있으나, 미동의시 상품상담이 불가합니다.
-																	</td>
-																</tr>
-																<tr>
-																	<td>2</td>
-																	<td>연락처</td>
-																	<td>신청자<br>기입</td>
-																</tr>
-																<tr>
-																	<td>3</td>
-																	<td>개인정보<br>수집 및<br>이용동의</td>
-																	<td>동의 획득</td>
-																</tr>
-															</table>
+															<div>
+																<label>
+																	<input type="checkbox" name="agree" >개인정보제공 동의
+																</label>
+																<span class="explan">이용약관 보기</span>
+																
+																<table>
+																	<tr>
+																		<td width="25px">No.</td>
+																		<td width="60px">수집항목</td>
+																		<td width="55px">수집방법</td>
+																		<td>표준 문구</td>
+																	</tr>
+																	<tr>
+																		<td>1</td>
+																		<td>이름</td>
+																		<td>신청자<br>기입</td>
+																		<td rowspan="3" style="text-align:left; padding:5px;">
+																			개인정보 수집 및 이용 동의 (필수)<br>
+																			<br>
+																			1. 수집/이용 개인정보 항목 : 성명, 연락처(휴대전화번호)<br>
+																			2. 수집/이용 목적 : 고객상담 업무 및 회원등록, 모집, 유지, 관리<br>
+																			3. 보유기간 : 소비자 불만 또는 분쟁처리에 관한 기록 보존을 위해 3년간 보유<br><br>
+																			
+																			* 개인정보 수집 이용에 동의하지 않을 수 있으나, 미동의시 상품상담이 불가합니다.
+																		</td>
+																	</tr>
+																	<tr>
+																		<td>2</td>
+																		<td>연락처</td>
+																		<td>신청자<br>기입</td>
+																	</tr>
+																	<tr>
+																		<td>3</td>
+																		<td>개인정보<br>수집 및<br>이용동의</td>
+																		<td>동의 획득</td>
+																	</tr>
+																</table>
+															</div>
 
-															<label>
-																<input type="checkbox" name="agree2">개인정보 처리위탁 동의
-															</label>
-															
-															<table>
-																<tr>
-																	<td width="25px">No.</td>
-																	<td width="60px">수집항목</td>
-																	<td width="55px">수집방법</td>
-																	<td>표준 문구</td>
-																</tr>
-																<tr>
-																	<td>1</td>
-																	<td>이름</td>
-																	<td>신청자<br>기입</td>
-																	<td style="text-align:left; padding:5px;">
-																		개인정보 처리위탁 동의 (필수)<br>
-																		<br>
-																		- 개인정보 수탁자 : <br>
-																		에이앤젯드림<br><br>
-																		<!-- 에이앤젯드림, OOOO (에이앤젯드림의 재위탁)<br><br> -->
-																		
-																		- 개인정보 처리위탁 목적 : 고객상담 업무 및 회원등록, 모집, 유지, 관리<br><br>
-																		* 개인정보 처리위탁에 동의하지 않을 수 있으나, 미동의시 상품상담이 불가합니다.
-																	</td>
-																</tr>
-															</table>
+															<div>
+																<label>
+																	<input type="checkbox" name="agree2">개인정보 처리위탁 동의
+																</label>
+																<span class="explan">이용약관 보기</span>
+																
+																<table>
+																	<tr>
+																		<td width="25px">No.</td>
+																		<td width="60px">수집항목</td>
+																		<td width="55px">수집방법</td>
+																		<td>표준 문구</td>
+																	</tr>
+																	<tr>
+																		<td>1</td>
+																		<td>이름</td>
+																		<td>신청자<br>기입</td>
+																		<td style="text-align:left; padding:5px;">
+																			개인정보 처리위탁 동의 (필수)<br>
+																			<br>
+																			- 개인정보 수탁자 : <br>
+																			에이앤젯드림<br><br>
+																			<!-- 에이앤젯드림, OOOO (에이앤젯드림의 재위탁)<br><br> -->
+																			
+																			- 개인정보 처리위탁 목적 : 고객상담 업무 및 회원등록, 모집, 유지, 관리<br><br>
+																			* 개인정보 처리위탁에 동의하지 않을 수 있으나, 미동의시 상품상담이 불가합니다.
+																		</td>
+																	</tr>
+																</table>
+															</div>
 														</div>
 													</span>
 												</label>
