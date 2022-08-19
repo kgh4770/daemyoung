@@ -1,4 +1,6 @@
 <?php
+ini_set('display_errors', 0);
+error_reporting(E_ALL); 
 class CodenodForm{
 	
 	private $conn;
@@ -59,6 +61,30 @@ class CodenodForm{
 			if(isset($_SESSION['valid'])) {
 				header('Location: result.php');            
 			}
+		}
+	}
+
+	public function userLogin2($user, $pass)
+	{
+
+		if($user == "" || $pass == "") {
+			echo "Either username or password field is empty.";
+		} else {
+			$result = mysqli_query($this->conn, "SELECT * FROM users WHERE username='$user' AND password=md5('$pass')")
+			or die("Could not execute the select query.");
+
+			$row = mysqli_fetch_assoc($result);
+
+			if(is_array($row) && !empty($row)) {
+				$validuser = $row['username'];
+				$_SESSION['valid'] = $validuser;
+				$_SESSION['name'] = $row['name'];
+				$_SESSION['id'] = $row['id'];
+				return true;
+			} else {
+				echo "Invalid username or password.";
+			}
+
 		}
 	}
 

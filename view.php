@@ -1,5 +1,6 @@
 <?php
 include 'connect.php';
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -72,10 +73,19 @@ include 'connect.php';
 					</ul>
 				</div>
 				<div class="table-responsive step-inner-content clearfix position-relative">
-					
+					<?php
+					if(isset($_SESSION['valid'])){
+					?>
+					<div>
+					<a href="javascript:selectdel()" class="pull-right btn btn-primary apply-now" style="margin-right:10px;">선택삭제</a>
+					<a href="exceldown.php" class="pull-right btn btn-primary apply-now">엑셀다운로드</a>
+					</div>
+					<?php }?>
+					<form name="listform" id="listform" method="post" target="hidfrm">
 					<table id="applicant-table" class="table table-striped table-hover" cellspacing="0" cellpadding="5">
 						<thead>
 							<tr>
+								<?php if(isset($_SESSION['valid'])){?><th scope="col" style="width:50px;"></th><?php }?>
 								<th scope="col">Id</th>
 								<th style="display: flex; width: 130px;border-bottom: 1px solid #000000" scope="col">지원</th>
 								<th scope="col">혜택선택이유</th>
@@ -91,19 +101,20 @@ include 'connect.php';
 								extract($info);
 								?>
 								<tr>
+									<?php if(isset($_SESSION['valid'])){?><td><input type="checkbox" name="chkmem[]" value="<?php echo $id; ?>"></td><?php }?>
 									<td><?php echo $id; ?></td>
 									<td><?php echo $job_title; ?></td>
 									<td><?php echo $add_info; ?></td>
 									<td><?php echo $first_name; ?></td>
 									<td><?php echo $phone; ?></td>
-									<td><a target="_blank" href="uploads/<?php echo $resume; ?>">View</a></td>
+									<td><a target="_blank" href="detail.php?id=<?=$id?>">View</a></td>
 								</tr>
 								<?php
 							}
 							?>
 						</tbody>
-					</tr>
-				</table>
+					</table>
+					</form>
 				<div><a href="index.html" class="pull-right btn btn-primary apply-now">Apply New</a></div>
 			</div>
 		</div>
@@ -117,7 +128,20 @@ include 'connect.php';
 		$(document).ready( function () {
 			$('#applicant-table').DataTable();
 		} );
+function selectdel(){
+	f=document.listform;
+	if(!confirm("선택한 데이터를 삭제하시겠습니까?\n한번 삭제된 데이터는 복구가 되지 않습니다.")){
+		return;
+	}
+	if($("input[name='chkmem[]']:checked").length<=0){
+		alert("삭제하실 데이터를 하나이상 선택하세요.");
+		return;
+	}
+	f.action="list_delete_proc.php";
+	f.submit();
+}
 	</script>
+	<iframe name="hidfrm" style="display:none;"></iframe>
 
 </body>
 

@@ -86,9 +86,16 @@ include 'connect.php';
 						if(isset($_REQUEST['submit'])){
 
 							extract($_REQUEST);
-
-							if($obj->userLogin($username, $password)){
-								header('location:result.php');
+							if($obj->userLogin2($username, $password)){
+								if($prev_url){
+									//header('location:'.$prev_url);
+									echo "<script>location.href='".$prev_url."';</script>";
+									exit;
+								}else{
+									//header('location:view.php');
+									echo "<script>location.href='view.php';</script>";
+									exit;
+								}
 							}
 							else{
 								echo "Cannot Login!";	
@@ -98,6 +105,7 @@ include 'connect.php';
 					</div>
 					<div class="need-job-slide row justify-content-center">
 						<form class="col-md-6" action="login.php" method="post">
+						<input type="hidden" name="prev_url" value="<?=$_GET['prev_url']?>">
 							<table width="600" border="0" class="table table-bodered p-5" cellspacing="0" cellpadding="5">
 								<tr>
 									<th width="90" scope="row" style="text-align:right" >User Name</th>
